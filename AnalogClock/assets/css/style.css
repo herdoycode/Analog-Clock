@@ -1,0 +1,70 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  background: url(../img/bg_main.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.clock {
+  width: 250px;
+  height: 250px;
+  background: url(../img/clock.png);
+  background-size: cover;
+}
+.indicator img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+}
+.pendulum {
+  z-index: 0;
+  top: 150px;
+  animation: pendulumAnimate 2s linear infinite;
+}
+.clock {
+  z-index: 1;
+}
+.hour {
+  z-index: 2;
+}
+.min {
+  z-index: 3;
+}
+.sec {
+  z-index: 4;
+}
+
+@keyframes pendulumAnimate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
